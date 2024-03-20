@@ -13,12 +13,10 @@ body {
   background-color: #F2EAE2;
 }
 
-/* .container {
+.container {
   max-width: 37.5rem;
-  max-height: 28.12rem;
-  display: flex;
-  border-radius: 0.625rem;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .perfume {
@@ -29,23 +27,21 @@ body {
 }
 
 .content {
-  border-top-right-radius: 0.625rem;
-  border-bottom-right-radius: 0.625rem;
+  max-height: 28.125rem;
   padding: 2rem;
   background-color: #fff;
 }
 
 .brand {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.3125rem;
-  text-transform: uppercase;
-  color: #6c7290
+  color: #6c7290;
 }
 
 .title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 2rem;
   font-weight: 700;
   line-height: 100%;
@@ -61,9 +57,9 @@ body {
 
 .pricing {
   display: flex;
-  column-gap: 1rem;
   align-items: center;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .price {
@@ -74,20 +70,21 @@ body {
 }
 
 .slashed {
-  font-size: 0.8126rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 177%;
-  text-decoration-line: line-through;
+  line-height: 176%;
+  text-decoration: line-through;
   color: #6c7289;
 }
 
 .btn {
-  height: 3rem;
   max-width: 14.75rem;
+  min-height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.7rem;
+  gap: 1rem;
+  border: none;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 700;
@@ -96,11 +93,14 @@ body {
 }
 
 .cart {
-  width: 0.89rem;
-  height: 1rem;
-} */
+  min-width: 0.89rem;
+  min-height: 1rem;
+}
 
-@media (min-width: 23.43rem) {
+
+
+
+@media (max-width: 23.43rem) {
   
   .container {
     max-width: 23.43rem;
@@ -108,6 +108,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 1.75rem 1rem;
     background-color: #F2EAE2;
   }
 
