@@ -100,7 +100,7 @@ body {
 
 
 
-@media (max-width: 23.43rem) {
+@media (min-width: 23.43rem) {
   
   .container {
     max-width: 23.43rem;
