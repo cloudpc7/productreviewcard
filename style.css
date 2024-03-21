@@ -1,200 +1,140 @@
-* {
+:root {
+  --clr-primary-400: hsl(158, 36%, 37%);
+  --clr-secondary-200: hsl(30, 38%, 92%);
+
+  --clr-nuetral-900: hsl(212, 21%, 14%);
+  --clr-nuetral-400: hsl(228, 12%, 48%);
+  --clr-nuetral-100: hsl(0, 0%, 100%);
+
+  --ff-primary: "Fraunces", serif;
+  --ff-base: 'Montserrat', sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* css reset  */
+/* 1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
   box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
-  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  background-color: #F2EAE2;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--clr-nuetral-400);
+  background-color: var(--clr-secondary-200);
+  display: grid;
+  place-content: center;
+  /* min-height: 100vh; */
+  margin: 1rem;
 }
+
+/* utilites  */
 
 .container {
   max-width: 37.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  background-color: var(--clr-nuetral-100);
+  border-radius: 0.625rem;
+  overflow: hidden;
 }
 
-.perfume {
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 0.625rem;
-  border-bottom-left-radius: 0.625rem;
+@media (min-width: 37.5rem) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .content {
-  max-height: 28.125rem;
-  padding: 2rem;
-  background-color: #fff;
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
 }
 
 .brand {
-  margin-bottom: 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.3125rem;
-  color: #6c7290;
+  letter-spacing: 0.75rem;
+  text-transform: uppercase;
 }
 
 .title {
-  margin-bottom: 1rem;
   font-size: 2rem;
-  font-weight: 700;
-  line-height: 100%;
-}
-
-.info {
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 164%;
-  color: #6c7289;
+  font-family: var(--ff-primary);
+  line-height: 1;
+  color: var(--clr-nuetral-900);
 }
 
 .pricing {
   display: flex;
-  align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .price {
   font-size: 2rem;
-  font-weight: 700;
-  line-height: 100%;
-  color: #3D8168;
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-400);
 }
 
 .slashed {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 176%;
   text-decoration: line-through;
-  color: #6c7289;
+  color: var(--clr-nuetral-400);
 }
 
 .btn {
-  max-width: 14.75rem;
-  min-height: 3rem;
-  display: flex;
-  justify-content: center;
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  border: none;
+  justify-content: center;
+  gap: .5rem;
+  border: 0;
   border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  background-color: #3D8168;
-  color: #fff;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-nuetral-100);
+  padding: 0.5rem 1.5rem;
+  font-weight: var(--fw-bold);
+  font-size: 0.925rem;
 }
-
-.cart {
-  min-width: 0.89rem;
-  min-height: 1rem;
-}
-
-
-
-
-@media (min-width: 23.43rem) {
-  
-  .container {
-    max-width: 23.43rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1.75rem 1rem;
-    background-color: #F2EAE2;
-  }
-
-  .perfume {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-top-left-radius: 0.625rem;
-    border-top-right-radius: 0.625rem;
-  }
-
-
-  .content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    border-bottom-left-radius: 0.625rem;
-    border-bottom-right-radius: 0.625rem;
-    background-color: #fff;
-  }
-
-  .brand {
-    margin-bottom: 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.3125rem;
-    color: #6c7290;
-  }
-
-  .title {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 100%;
-  }
-
-  .info {
-    margin-bottom: 1.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 164%;
-    color: #6c7289;
-  }
-
-  .pricing {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .price {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 100%;
-    color: #3D8168;
-  }
-
-  .slashed {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    line-height: 176%;
-    text-decoration: line-through;
-    color: #6c7289;
-  }
-
-  .btn {
-    min-width: 18.43rem;
-    min-height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 700;
-    background-color: #3D8168;
-    color: #fff;
-  }
-
-  .cart {
-    min-width: 0.89rem;
-    min-height: 1rem;
-  }
-  
-}
-
